@@ -28,7 +28,7 @@ if __name__== "__main__":
 	new_vel = Twist()
 	rospy.init_node('wr_zad', anonymous=True)
 	print("ready")
-	pub = rospy.Publisher('/mobile_base/commands/velocity', Twist, queue_size=10)
+	pub = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
 	rospy.Subscriber( '/odom' , Odometry, odom_callback)
 	rospy.Subscriber( '/scan' , LaserScan, scan_callback)
 	
