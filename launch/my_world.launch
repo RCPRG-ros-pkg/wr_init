@@ -1,0 +1,13 @@
+<launch>
+  <arg name="model" default="kobuki"/>
+  <arg name="x_pos" default="0.5"/>
+  <arg name="y_pos" default="0.5"/>
+  <arg name="z_pos" default="0.0"/>
+
+  <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch">
+    <arg name="world_file" value="$(find wr_sim)/worlds/maze.world"/>
+  </include>
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find wr_sim)/rviz/config.rviz"/>
+<!--  <node pkg="gmapping" type="slam_gmapping" name="mapping"/>
+-->
+</launch>
