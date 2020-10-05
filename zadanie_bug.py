@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import rospy
 import tf
 from nav_msgs.msg import Odometry
