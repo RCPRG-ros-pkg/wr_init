@@ -7,6 +7,7 @@ from nav_msgs.msg import Odometry
 from geometry_msgs.msg import Twist
 from turtlesim.msg  import Pose
 from sensor_msgs.msg import LaserScan
+
 # funkcja wywolywana przy przyjsciu danych ze skanera laserowego
 def scan_callback(scan):
 	print scan
@@ -30,8 +31,8 @@ if __name__== "__main__":
 	new_vel = Twist()
 	rospy.init_node('wr_zad', anonymous=True)
 	print("ready")
-	pub = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
 	rospy.Subscriber( '/odom' , Odometry, odom_callback)
+	pub = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
 	rospy.Subscriber( '/scan' , LaserScan, scan_callback)
 	
 	rate=rospy.Rate(10) # 10Hz
